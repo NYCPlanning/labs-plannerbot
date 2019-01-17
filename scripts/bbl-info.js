@@ -23,7 +23,7 @@ module.exports = (robot) => {
           zonedist1,
         } = row;
 
-        res.send(`Hi! BBL ${bbl} is known as ${address} in ${boroughArray[borocode]}.  It's located in a ${zonedist1} district. <https://zola.planning.nyc.gov/lot/${borocode}/${block}/${lot}|View in ZoLa>`);
+        res.send(`Hi! BBL ${bbl} is known as ${address} in ${boroughArray[borocode]}.  It's located in an ${zonedist1} district. <https://zola.planning.nyc.gov/lot/${borocode}/${block}/${lot}|View in ZoLa>`);
       } else {
         res.send(`Hi! ${bbl} looks like a BBL, but it doesn't exist in PLUTO.`)
       }
