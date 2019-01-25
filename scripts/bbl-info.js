@@ -2,7 +2,7 @@ const fetch = require('node-fetch');
 
 const boroughArray = [null, 'Manhattan', 'The Bronx', 'Brooklyn', 'Queens', 'Staten Island'];
 
-const bblRegex = /[1-5]{1}[0-9]{5}[0-9]{4}/;
+const bblRegex = /\b[1-5]{1}[0-9]{5}[0-9]{4}\b/;
 
 module.exports = (robot) => {
   robot.hear(bblRegex, async (res) => {
