@@ -20,4 +20,4 @@ jobs:
       - deploy:
           name: Deployment
           command: |
-            git remote add dokku dokku@labs-01.planninglabs.nyc:zap-api && git push dokku master
+            git remote add dokku dokku@labs-01.planninglabs.nyc:plannerbot && git push dokku master
