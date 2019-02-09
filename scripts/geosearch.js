@@ -13,7 +13,7 @@ const bblDemux = (bbl) => {
 }
 
 module.exports = (robot) => {
-  robot.response(/^geosearch .*$/, async (res) => {
+  robot.respond(/^geosearch .*$/, async (res) => {
     const query = res.message.text.split('plannerbot geosearch ')[1]
     res.send(query);
 

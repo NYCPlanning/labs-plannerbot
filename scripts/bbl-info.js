@@ -7,7 +7,7 @@ const boroughArray = [null, 'Manhattan', 'The Bronx', 'Brooklyn', 'Queens', 'Sta
 const bblRegex = /^bbl \b[1-5]{1}[0-9]{5}[0-9]{4}\b/;
 
 module.exports = (robot) => {
-  robot.response(bblRegex, async (res) => {
+  robot.respond(bblRegex, async (res) => {
     const [ bbl ] = res.message.text.match(bblRegex);
     const apiCall = `https://planninglabs.carto.com/api/v2/sql?q=SELECT address, zonedist1, borocode, block, lot FROM mappluto_18v_1_1 WHERE bbl = ${bbl}`;
 
