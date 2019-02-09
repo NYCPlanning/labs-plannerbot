@@ -1,3 +1,5 @@
+// Commands:
+// {bbl} - if you enter a 10-digit bbl, plannerbot will look it up in PLUTO and return the address, primary zoning and a link to ZoLa
 const fetch = require('node-fetch');
 
 const boroughArray = [null, 'Manhattan', 'The Bronx', 'Brooklyn', 'Queens', 'Staten Island'];
