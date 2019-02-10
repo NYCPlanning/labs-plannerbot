@@ -15,8 +15,6 @@ const bblDemux = (bbl) => {
 module.exports = (robot) => {
   robot.hear(/^plannerbot geosearch .*$/, async (res) => {
     const query = res.message.text.split('plannerbot geosearch ')[1]
-    res.send(query);
-
     const apiCall = `https://geosearch.planninglabs.nyc/v1/search?text=${query}`;
 
     try {

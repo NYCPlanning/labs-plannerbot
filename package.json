@@ -5,8 +5,10 @@
   "author": "Chris Whong (cwhong@planning.nyc.gov)",
   "description": "A simple helpful robot for the NYC Department of City Planning",
   "dependencies": {
+    "@octokit/rest": "^16.15.0",
     "hubot": "^3.2.0",
     "hubot-diagnostics": "^1.0.0",
+    "hubot-dotenv": "^1.0.0",
     "hubot-help": "^1.0.1",
     "hubot-heroku-keepalive": "^1.0.3",
     "hubot-pugme": "^0.1.1",
@@ -17,5 +19,8 @@
   },
   "engines": {
     "node": "^8.11.3"
+  },
+  "scripts": {
+    "start": "hubot-dotenv -n botname"
   }
 }
