@@ -46,6 +46,7 @@ module.exports = (robot) => {
       res.send(generateResponseString(repo, githubResponse));
 
     } catch(e) {
+      console.log(e);
       res.send(`Oops, I couldn\'t find the repo nycplanning/${repo}`);
     }
   });
