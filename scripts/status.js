@@ -41,7 +41,7 @@ module.exports = (robot) => {
     const repo = res.message.text.split('plannerbot repostatus ')[1]
 
     try {
-      const githubresponse = await compareCommits(repo, 'master', 'develop', octokit)
+      const githubResponse = await compareCommits(repo, 'master', 'develop', octokit)
 
       res.send(generateResponseString(repo, githubResponse));
 
