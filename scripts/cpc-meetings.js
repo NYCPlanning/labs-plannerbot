@@ -1,5 +1,5 @@
 // Commands:
-// {cpc meetings} - checks the city planning website and tells you when the next cpc meetings are
+// plannerbot cpc meetings - checks the city planning website and tells you when the next cpc meetings are
 const fetch = require('node-fetch');
 const moment = require('moment');
 const cheerio = require('cheerio');
@@ -28,7 +28,7 @@ const formatResponse = ({reviewSession, specialMeeting, publicMeeting}) => {
 };
 
 module.exports = (robot) => {
-  robot.respond('cpc meetings', async (res) => {
+  robot.respond('/cpc meetings/', async (res) => {
     const cpcMeetingPage = 'https://www1.nyc.gov/site/planning/about/commission-meetings.page';
 
     try {

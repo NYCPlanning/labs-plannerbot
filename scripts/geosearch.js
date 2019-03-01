@@ -1,5 +1,5 @@
 // Commands:
-// hubot geosearch - Sends the string immediately following the command to the geosearch `/search` API
+// hubot geosearch {address} - Sends the string immediately following the command to the geosearch `/search` API
 
 const fetch = require('node-fetch');
 
