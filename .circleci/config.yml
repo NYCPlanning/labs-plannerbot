@@ -36,4 +36,6 @@ jobs:
       - deploy:
           name: Deployment
           command: |
-            git remote add dokku dokku@labs-01.planninglabs.nyc:plannerbot && git push dokku master
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              git remote add dokku dokku@labs-01.planninglabs.nyc:plannerbot && git push dokku master
+            fi
