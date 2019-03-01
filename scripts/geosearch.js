@@ -13,8 +13,9 @@ const bblDemux = (bbl) => {
 }
 
 module.exports = (robot) => {
-  robot.respond(/^geosearch .*$/, async (res) => {
-    const query = res.message.text.split('plannerbot geosearch ')[1]
+  robot.respond(/geosearch/, async (res) => {
+    const query = res.message.text.split('plannerbot geosearch ')[1];
+    console.log(query);
     const apiCall = `https://geosearch.planninglabs.nyc/v1/search?text=${query}`;
 
     try {
