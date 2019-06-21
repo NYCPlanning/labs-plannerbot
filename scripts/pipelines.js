@@ -1,7 +1,9 @@
 // Commands:
 // hubot pipelines - updates all zenhub board pipelines
 
-let {PythonShell} = require('python-shell')
+require('dotenv').config();
+
+let {PythonShell} = require('python-shell');
 
 let options = {
   mode: 'text',

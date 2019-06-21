@@ -1,7 +1,9 @@
 // Commands:
 // hubot milestones - creates sprint milestones for all repos
 
-let {PythonShell} = require('python-shell')
+require('dotenv').config();
+
+let {PythonShell} = require('python-shell');
 
 let options = {
   mode: 'text',

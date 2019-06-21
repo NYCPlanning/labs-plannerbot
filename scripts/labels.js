@@ -1,6 +1,8 @@
 // Commands:
 // hubot labels - conforms all repos to Labs label standards
 
+require('dotenv').config();
+
 let {PythonShell} = require('python-shell')
 
 let options = {
