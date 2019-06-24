@@ -12,6 +12,7 @@
     "hubot": "^3.2.0",
     "hubot-diagnostics": "^1.0.0",
     "hubot-dotenv": "^1.0.0",
+    "hubot-github-webhook-listener": "^0.9.1",
     "hubot-help": "^1.0.1",
     "hubot-heroku-keepalive": "^1.0.3",
     "hubot-pugme": "^0.1.1",
