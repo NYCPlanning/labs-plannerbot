@@ -12,6 +12,7 @@ STAGING = 6
 
 GTOKEN = sys.argv[1]
 ZTOKEN = sys.argv[2]
+REPO = sys.argv[3]
 REPO_OWNER = 'NYCPlanning'
 GIT_HEADER = {'Authorization': 'token ' + GTOKEN}
 ZEN_HEADER = {'X-Authentication-Token': ZTOKEN}

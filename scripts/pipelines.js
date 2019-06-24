@@ -1,23 +1,27 @@
 // Commands:
-// hubot pipelines - updates all zenhub board pipelines
+// hubot pipelines <repo> - updates zenhub board or 'all' boards
 
 require('dotenv').config();
 
 let {PythonShell} = require('python-shell');
 
-let options = {
-  mode: 'text',
-  pythonOptions: ['-u'], // get print results in real-time
-  scriptPath: './scripts/python-scripts',
-  args: [process.env.GITHUB_PERSONAL_ACCESS_TOKEN, process.env.ZENHUB_PERSONAL_ACCESS_TOKEN]
-};
-
 module.exports = (robot) => {
-  robot.respond(/pipelines/, async (res) => {
+    robot.respond( /pipelines (.*)/i, async (res) => {
+      repo = res.match[1]
 
-    PythonShell.run('switch-pipelines.py', options, function (err, results) {
-      if (err) throw err;
-      // results is an array consisting of messages collected during execution
-    });
+      let options = {
+        mode: 'text',
+        pythonOptions: ['-u'], // get print results in real-time
+        scriptPath: './scripts/python-scripts',
+        args: [process.env.GITHUB_PERSONAL_ACCESS_TOKEN, process.env.ZENHUB_PERSONAL_ACCESS_TOKEN, repo]
+      };
+
+      PythonShell.run('switch-pipelines.py', options, function (err, results) {
+        if (err) {
+          // results is an array consisting of messages collected during execution
+          throw err;
+          console.log('Something went wrong!');
+        }
+      });
   });
 }
