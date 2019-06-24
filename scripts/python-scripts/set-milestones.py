@@ -28,7 +28,7 @@ if REPO == 'all':
             else:
                 repo_name = row[0]
 
-                with open('./csv/sprints.txt') as csv_file:
+                with open(SPRINT_LIST) as csv_file:
                     csv_f2 = csv.reader(csv_file, delimiter=',')
                     f2_count = 0
                     for row2 in csv_f2:
