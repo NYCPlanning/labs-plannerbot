@@ -29,25 +29,12 @@ function runScript(repo_name, options, response) {
 
 module.exports = (robot) => {
 
-  // emit hubot event upon incoming webhook message
-  robot.router.post "/hubot/github-repo-listener", (req, res) => {
-    let eventBody = {
-      eventType   : req.headers["x-github-event"]
-      signature   : req.headers["X-Hub-Signature"]
-      deliveryId  : req.headers["X-Github-Delivery"]
-      payload     : req.body
-      query       : querystring.parse(url.parse(req.url).query)
-    };
-
-    robot.emit "github-repo-event", eventBody;
-  }
-
   // consume webhook
   @robot.on "github-repo-event", (repoEvent) => {
     switch (repoEvent.eventType) {
       case "push":
         let payload = repoEvent.payload;
-        let repo = payload.repository.name;
+        let repo = payload['repository']['name'];
         let options = defineOptions(repo);
         runScript(repo, options);
     }
