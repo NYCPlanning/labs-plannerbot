@@ -32,8 +32,8 @@ module.exports = (robot) => {
   // consume github webhook
   robot.on("github-repo-event", (repoEvent) => {
     switch (repoEvent.eventType) {
-      case "push":
       case "repository":
+      case "push":
         let githubPayload = JSON.parse(repoEvent.payload.payload);
         let repo = githubPayload.repository.name;
         let options = defineOptions(repo);
