@@ -43,17 +43,14 @@ module.exports = (robot) => {
   }
 
   // consume webhook
-  robot.on "github-repo-event", (repoEvent) => {
-    robot.send('Webhook has been consumed!')
-
-    // switch (repoEvent.eventType) {
-    //   case "push":
-    //     let payload = repoEvent.payload;
-    //     let repo = payload.repository.name;
-    //     let options = defineOptions(repo);
-    //     console.log("here in webhook consumer")
-    //     //runScript(repo, options);
-    // }
+  @robot.on "github-repo-event", (repoEvent) => {
+    switch (repoEvent.eventType) {
+      case "push":
+        let payload = repoEvent.payload;
+        let repo = payload.repository.name;
+        let options = defineOptions(repo);
+        runScript(repo, options);
+    }
   }
 
   // listen for command prompt
