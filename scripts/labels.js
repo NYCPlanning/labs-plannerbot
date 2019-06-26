@@ -15,14 +15,14 @@ function defineOptions(repoName) {
   return options;
 }
 
-function runScript(repo_name, options) {
+function runScript(repoName, options) {
   PythonShell.run('set-labels.py', options, function (err, results) {
     if (err) {
       // results is an array consisting of messages collected during execution
       throw err;
       console.log('Something went wrong!');
     } else {
-      console.log('Successfully created standard labels for ' + repo_name);
+      console.log('Successfully created standard labels for ' + repoName);
     }
   });
 }

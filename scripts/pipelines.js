@@ -15,14 +15,14 @@ function defineOptions(repoName) {
   return options;
 }
 
-function runScript(repo_name, options) {
+function runScript(repoName, options) {
   PythonShell.run('set-pipelines.py', options, function (err, results) {
     if (err) {
       // results is an array consisting of messages collected during execution
       throw err;
       console.log('Something went wrong!');
     } else {
-      console.log('Successfully cleaned up Zenhub board for ' + repo_name);
+      console.log('Successfully cleaned up Zenhub board for ' + repoName);
     }
   });
 }

@@ -15,14 +15,14 @@ function defineOptions(repoName) {
   return options;
 }
 
-function runScript(repo_name, options) {
+function runScript(repoName, options) {
   PythonShell.run('set-milestones.py', options, function (err, results) {
     if (err) {
       // results is an array consisting of messages collected during execution
       throw err;
       console.log('Something went wrong!');
     } else {
-      console.log('Successfully created sprint milestones for ' + repo_name);
+      console.log('Successfully created sprint milestones for ' + repoName);
     }
   });
 }
@@ -37,6 +37,7 @@ module.exports = (robot) => {
         let githubPayload = JSON.parse(repoEvent.payload.payload);
         let repo = githubPayload.repository.name;
         let options = defineOptions(repo);
+        console.log("milestoned");
         runScript(repo, options);
     }
   });
