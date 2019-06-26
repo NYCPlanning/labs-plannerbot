@@ -38,13 +38,12 @@ module.exports = (robot) => {
         let repo = githubPayload.repository.name;
         let options = defineOptions(repo);
         runScript(repo, options);
-        break;
     }
   });
 
   // listen for command prompt
   robot.respond( /labels (.*)/i, async (res) => {
-    let repoName = res.match[1];
+    let repo = res.match[1];
     let options = defineOptions(repo);
     runScript(repo, options);
   });

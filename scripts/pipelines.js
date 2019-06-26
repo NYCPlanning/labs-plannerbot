@@ -16,7 +16,7 @@ function defineOptions(repoName) {
 }
 
 function runScript(repoName, options) {
-  PythonShell.run('set-pipelines.py', options, function (err, results) {
+  PythonShell.run('switch-pipelines.py', options, function (err, results) {
     if (err) {
       // results is an array consisting of messages collected during execution
       throw err;
@@ -42,7 +42,7 @@ module.exports = (robot) => {
 
   // listen for command prompt
   robot.respond( /pipelines (.*)/i, async (res) => {
-    let repoName = res.match[1];
+    let repo = res.match[1];
     let options = defineOptions(repo);
     runScript(repo, options);
   });
