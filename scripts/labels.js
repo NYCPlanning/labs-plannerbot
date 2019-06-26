@@ -33,7 +33,7 @@ module.exports = (robot) => {
   robot.on("github-repo-event", (repoEvent) => {
     switch (repoEvent.eventType) {
       case "push":
-      case "repository"
+      case "repository":
         let githubPayload = JSON.parse(repoEvent.payload.payload);
         let repo = githubPayload.repository.name;
         let options = defineOptions(repo);
