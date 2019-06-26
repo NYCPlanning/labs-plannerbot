@@ -9,7 +9,7 @@ function defineOptions(repoName) {
     mode: 'text',
     pythonOptions: ['-u'], // get print results in real-time
     scriptPath: './scripts/python-scripts',
-    args: [process.env.GITHUB_PERSONAL_ACCESS_TOKEN, repoName]
+    args: [process.env.GITHUB_PERSONAL_ACCESS_TOKEN, process.env.ZENHUB_PERSONAL_ACCESS_TOKEN, repoName]
   };
 
   return options;
@@ -41,7 +41,7 @@ module.exports = (robot) => {
   });
 
   // listen for command prompt
-  robot.respond( /pipelines (.*)/i, async (res) => {
+  robot.respond( /pipelines (.*) /i, async (res) => {
     let repo = res.match[1];
     let options = defineOptions(repo);
     runScript(repo, options);
