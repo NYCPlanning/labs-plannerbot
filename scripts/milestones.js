@@ -37,6 +37,7 @@ module.exports = (robot) => {
         let githubPayload = JSON.parse(repoEvent.payload.payload);
         let repo = githubPayload.repository.name;
         let options = defineOptions(repo);
+        console.log('running script...');
         runScript(repo, options);
     }
   });

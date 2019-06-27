@@ -41,7 +41,7 @@ module.exports = (robot) => {
   });
 
   // listen for command prompt
-  robot.respond( /pipelines (.*) /i, async (res) => {
+  robot.respond( /pipelines (.*)/i, async (res) => {
     let repo = res.match[1];
     let options = defineOptions(repo);
     runScript(repo, options);
