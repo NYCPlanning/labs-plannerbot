@@ -1,5 +1,5 @@
 // Commands:
-// plannerbot milestones <repo> - creates sprint milestones for repo or 'all' repos
+// hubot milestones <repo> - creates sprint milestones for repo or 'all' repos
 
 require('dotenv').config();
 let {PythonShell} = require('python-shell');
@@ -31,13 +31,12 @@ module.exports = (robot) => {
 
   // consume github webhook
   robot.on("github-repo-event", (repoEvent) => {
+    console.log("hi!");
     switch (repoEvent.eventType) {
-      case "repository":
       case "push":
         let githubPayload = JSON.parse(repoEvent.payload.payload);
         let repo = githubPayload.repository.name;
         let options = defineOptions(repo);
-        console.log('running script...');
         runScript(repo, options);
     }
   });

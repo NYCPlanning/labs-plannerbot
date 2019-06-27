@@ -9,6 +9,7 @@
     "ajax": "0.0.4",
     "cheerio": "^1.0.0-rc.2",
     "dotenv": "^8.0.0",
+    "github-webhook-handler": "^0.7.1",
     "hubot": "^3.2.0",
     "hubot-diagnostics": "^1.0.0",
     "hubot-dotenv": "^1.0.0",
@@ -23,6 +24,7 @@
     "leetcode-cli": "^2.6.1",
     "moment": "^2.24.0",
     "node-fetch": "^2.3.0",
+    "npm": "^6.9.1",
     "python-shell": "^1.0.7"
   },
   "engines": {
