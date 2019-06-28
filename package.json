@@ -32,5 +32,8 @@
   },
   "scripts": {
     "start": "hubot-dotenv -n botname"
+  },
+  "devDependencies": {
+    "coffeescript": "^2.4.1"
   }
 }

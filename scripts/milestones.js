@@ -19,8 +19,8 @@ function runScript(repoName, options) {
   PythonShell.run('set-milestones.py', options, function (err, results) {
     if (err) {
       // results is an array consisting of messages collected during execution
-      throw err;
       console.log('Something went wrong!');
+      throw err;
     } else {
       console.log('Successfully created sprint milestones for ' + repoName);
     }
@@ -30,8 +30,7 @@ function runScript(repoName, options) {
 module.exports = (robot) => {
 
   // consume github webhook
-  robot.on("github-repo-event", (repoEvent) => {
-    console.log("hi!");
+  robot.on('github-repo-event', (repoEvent) => {
     switch (repoEvent.eventType) {
       case "push":
         let githubPayload = JSON.parse(repoEvent.payload.payload);
