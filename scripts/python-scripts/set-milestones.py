@@ -7,7 +7,7 @@ import sys
 TOKEN = sys.argv[1]
 REPO = sys.argv[2]
 REPO_OWNER = 'NYCPlanning'
-REPO_LIST = './scripts/python-scripts/csv/test-repos.txt'
+REPO_LIST = './scripts/python-scripts/csv/repos.txt'
 SPRINT_LIST = './scripts/python-scripts/csv/sprints.txt'
 HEADER = {'Authorization': 'token ' + TOKEN}
 

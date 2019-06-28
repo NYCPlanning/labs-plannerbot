@@ -29,7 +29,7 @@ function runScript(repoName, options) {
 
 module.exports = (robot) => {
 
-// consume github webhook
+  // consume github webhook
   robot.on("github-repo-event", (repoEvent) => {
     switch (repoEvent.eventType) {
       case "repository":
@@ -44,5 +44,6 @@ module.exports = (robot) => {
     let repo = res.match[1];
     let options = defineOptions(repo);
     runScript(repo, options);
+    res.send(robot.name);
   });
 }

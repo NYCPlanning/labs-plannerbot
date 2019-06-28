@@ -7,7 +7,7 @@ import sys
 TOKEN = sys.argv[1]
 REPO = sys.argv[2]
 REPO_OWNER = 'NYCPlanning'
-REPO_LIST = './scripts/python-scripts/csv/test-repos.txt'
+REPO_LIST = './scripts/python-scripts/csv/repos.txt'
 HEADER = {'Authorization': 'token ' + TOKEN, 'Accept': 'application/vnd.github.symmetra-preview+json'}
 
 TO_DELETE = ['bug', 'duplicate', 'enhancement', 'help%20wanted', 'good%20first%20issue', 'invalid', 'question', 'wontfix', 'documentation']
