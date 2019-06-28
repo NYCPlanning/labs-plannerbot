@@ -31,11 +31,13 @@ module.exports = (robot) => {
 
   // consume github webhook
   robot.on("github-repo-event", (repoEvent) => {
+    let repo = repoEvent.payload.repository.name;
+    let options = defineOptions(repo);
+    runScript(repo, options);
     switch (repoEvent.eventType) {
       case "push":
+        runScript(repo, options);
       case "pull_request":
-        let repo = repoEvent.payload.repository.name;
-        let options = defineOptions(repo);
         runScript(repo, options);
     }
   });
