@@ -19,8 +19,8 @@ function runScript(repo_name, options) {
   PythonShell.run('set-milestones.py', options, function (err, results) {
     if (err) {
       // results is an array consisting of messages collected during execution
-      throw err;
       console.log('Something went wrong!');
+      throw err;
     } else {
       console.log('Successfully created sprint milestones for ' + repo_name);
     }
@@ -42,7 +42,7 @@ module.exports = (robot) => {
 
   // listen for command prompt
   robot.respond( /milestones (.*)/i, async (res) => {
-    let repoName = res.match[1];
+    let repo = res.match[1];
     let options = defineOptions(repo);
     runScript(repo, options);
   });
