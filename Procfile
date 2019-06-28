@@ -1,1 +1,1 @@
-web: bin/hubot -a slack -l "pb"
+web: bin/hubot -a slack -l "<@pb>"
