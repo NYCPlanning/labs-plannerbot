@@ -44,6 +44,5 @@ module.exports = (robot) => {
     let repo = res.match[1];
     let options = defineOptions(repo);
     runScript(repo, options);
-    res.send(robot.name);
   });
 }
