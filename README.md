@@ -43,4 +43,4 @@ Scripts are custom code that run when plannerbot sees a particular string. Scrip
 
 ## Deployment
 
-Commits to master will trigger a dokku deployment on circleCI
+Commits to `master` autodeploy to Heroku ([labs-plannerbot](https://dashboard.heroku.com/apps/labs-plannerbot)).
